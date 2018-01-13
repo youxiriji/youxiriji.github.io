@@ -280,6 +280,9 @@ var SurveyQuizContainer = document.getElementById('squiz');
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
 
+
+var jsonFile = [];
+
 var getJSON = function(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -302,12 +305,21 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton)
 
     function loadQuestions(){
 
+        $.getJSON("https://youxiriji.github.io/char_easy.json",function(result){
+            console.log(result);
+            for(var i = 0; i < result.length; i++)
+            {
+                jsonFile.push(result[i]);
+            }
+        });
+
     }
     function showQuestions(questions, quizContainer){
         // we'll need a place to store the output and the answer choices
         var output = [];
         var answers;
-
+        loadQuestions();
+        console.log(jsonFile);
         // for each question...
         for(var i=0; i<questions.length; i++){
             
