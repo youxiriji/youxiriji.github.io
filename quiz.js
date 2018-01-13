@@ -319,7 +319,6 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton)
         var output = [];
         var answers;
         loadQuestions();
-        console.log(jsonFile);
         // for each question...
         for(var i=0; i<questions.length; i++){
             
@@ -386,7 +385,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton)
     }
 
     // show questions right away
-    showQuestions(questions, quizContainer);
+    showQuestions(jsonFile, quizContainer);
     
     // on submit, show results
     submitButton.onclick = function(){
