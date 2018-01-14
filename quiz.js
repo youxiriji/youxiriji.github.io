@@ -1,209 +1,4 @@
-
-
-var CharacterQuiz = [
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-		score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-    {
-        question: "马里奥",
-        answers: {
-            a: "不知道",
-            b: "知道",
-            c: "了解",
-            d: "熟悉"
-        },
-        score: 5
-    },
-];
-
-var BlankQuiz = [
+var SurveyQuestions = [
     {
         question: "What is 10/2?",
         answers: {
@@ -211,8 +6,7 @@ var BlankQuiz = [
             b: '5',
             c: '115'
         },
-        correctAnswer: 'b',
-		score: 5
+        correctAnswer: 'b'
     },
     {
         question: "What is 30/3?",
@@ -221,59 +15,11 @@ var BlankQuiz = [
             b: '5',
             c: '10'
         },
-        correctAnswer: 'c',
-		score: 10
+        correctAnswer: 'c'
     }
 ];
 
-var EsseyQuiz = [
-    {
-        question: "What is 10/2?",
-        answers: {
-            a: '3',
-            b: '5',
-            c: '115'
-        },
-        correctAnswer: 'b',
-		score: 5
-    },
-    {
-        question: "What is 30/3?",
-        answers: {
-            a: '3',
-            b: '5',
-            c: '10'
-        },
-        correctAnswer: 'c',
-		score: 10
-    }
-];
-
-var SurveyQuiz = [
-    {
-        question: "What is 10/2?",
-        answers: {
-            a: '3',
-            b: '5',
-            c: '115'
-        },
-        correctAnswer: 'b',
-        score: 5
-    },
-    {
-        question: "What is 30/3?",
-        answers: {
-            a: '3',
-            b: '5',
-            c: '10'
-        },
-        correctAnswer: 'c',
-        score: 10
-    }
-];
-
-
-var CharacterQuizContainer = document.getElementById('cquiz');
+var CharacterEasyQuizContainer = document.getElementById('cequiz');
 var BlankQuizContainer = document.getElementById('bquiz');
 var EsseyQuizContainer = document.getElementById('equiz');
 var SurveyQuizContainer = document.getElementById('squiz');
@@ -281,76 +27,68 @@ var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
 
 
-var jsonFile = [];
+var CharacterEasyQuizContainer = document.getElementById('cequiz');
+var BlankQuizContainer = document.getElementById('bquiz');
+var EsseyQuizContainer = document.getElementById('equiz');
+var SurveyQuizContainer = document.getElementById('squiz');
 
-var getJSON = function(url, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.responseType = 'json';
-    xhr.onload = function() {
-      var status = xhr.status;
-      if (status === 200) {
-        callback(null, xhr.response);
-      } else {
-        callback(status, xhr.response);
-      }
-    };
-    xhr.send();
-};
 
-generateQuiz(CharacterQuiz, CharacterQuizContainer, resultsContainer, submitButton);
+var CharacterEasyQuizContainer = document.getElementById('cequiz');
+var BlankQuizContainer = document.getElementById('bquiz');
+var EsseyQuizContainer = document.getElementById('equiz');
+var SurveyQuizContainer = document.getElementById('squiz');
 
-function generateQuiz(questions, quizContainer, resultsContainer, submitButton)
+
+function generateCharEasyQuiz(url, quizContainer, resultsContainer, submitButton)
 {
 
-    function loadQuestions(){
+    function loadCharEasyQuestions(quizContainer){
 
-        $.getJSON("https://youxiriji.github.io/char_easy.json",function(result){
-            console.log(result);
-            for(var i = 0; i < result.length; i++)
-            {
-                jsonFile.push(result[i]);
-            }
-        });
-
-    }
-    function showQuestions(questions, quizContainer){
-        // we'll need a place to store the output and the answer choices
         var output = [];
         var answers;
-        loadQuestions();
-        // for each question...
-        for(var i=0; i<questions.length; i++){
+
+        $.getJSON(url,function(result){
             
-            // first reset the list of answers
-            answers = [];
-
-            // for each available answer...
-            for(letter in questions[i].answers){
-
-                // ...add an html radio button
-                answers.push(
+            for(var i = 0; i < result.length; i++)
+            {
+                var current = result[i];
+               
+                answers = 
                     '<label>'
-                        + '<input type="radio" name="question'+i+'" value="'+letter+'">'
-                        + letter + ': '
-                        + questions[i].answers[letter]
+                        + '<input type="radio" name="question'+i+'" value="'+1+'">'
+                        +'A: '
+                        +current.a
                     + '</label>'
+                    + '<label>'
+                        + '<input type="radio" name="question'+i+'" value="'+2+'">'
+                        +'B: '
+                        +current.b
+                    + '</label>'
+                    + '<label>'   
+                        + '<input type="radio" name="question'+i+'" value="'+3+'">'
+                        +'C: '
+                        +current.c
+                    + '</label>'
+                    + '<label>'
+                        + '<input type="radio" name="question'+i+'" value="'+4+'">'
+                        +'D: '
+                        +current.d
+                    + '</label>'
+                    
+                ;
+              
+            // add this question and its answers to the output
+                output.push(
+                '<div class="question">' + current.char + '</div>'
+                + '<div class="answers">' + answers + '</div>'
                 );
             }
-
-            // add this question and its answers to the output
-            output.push(
-                '<div class="question">' + questions[i].question + '</div>'
-                + '<div class="answers">' + answers.join('') + '</div>'
-            );
-        }
-
-        // finally combine our output list into one string of html and put it on the page
-        quizContainer.innerHTML = output.join('');
+            //console.log(output);
+            quizContainer.innerHTML = output.join('');
+        });
+       
     }
-
-
-    function calculateScore(questions, quizContainer, resultsContainer){
+    function calculateCharEasyScore(quizContainer, resultsContainer){
         
         // gather answer containers from our quiz
         var answerContainers = quizContainer.querySelectorAll('.answers');
@@ -360,24 +98,18 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton)
         var score = 0;
         
         // for each question...
-        for(var i=0; i<questions.length; i++){
+        for(var i=0; i<20; i++){
 
             // find selected answer
+
             userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
-            
+            console.log(userAnswer);
             // if answer is correct
-            if(userAnswer===questions[i].correctAnswer){
-                // add to the number of correct answers
-                score = score + questions[i].score;
-                
-                // color the answers green
-                answerContainers[i].style.color = 'lightgreen';
-            }
-            // if answer is wrong or blank
-            else{
-                // color the answers red
-                answerContainers[i].style.color = 'red';
-            }
+            if(userAnswer == 1)score = score -2;
+            if(userAnswer == 2)score = score;
+            if(userAnswer == 3)score = score+1;
+            if(userAnswer == 4)score = score+2;
+
         }
 
         // show number of correct answers out of total
@@ -385,11 +117,13 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton)
     }
 
     // show questions right away
-    showQuestions(jsonFile, quizContainer);
+    loadCharEasyQuestions(quizContainer);
     
     // on submit, show results
     submitButton.onclick = function(){
-        calculateScore(questions, quizContainer, resultsContainer);
+        calculateCharEasyScore(quizContainer, resultsContainer);
     }
 
 }
+
+generateCharEasyQuiz("https://youxiriji.github.io/char_easy.json", CharacterEasyQuizContainer, resultsContainer, submitButton);
