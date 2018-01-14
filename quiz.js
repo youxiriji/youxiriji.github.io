@@ -97,13 +97,14 @@ function generatecharacterQuiz(url, quizContainer, resultsContainer, submitButto
         
 
         // gather answer containers from our quiz
+        console.log(characterQuestions);
         var answerContainers = quizContainer.querySelectorAll('.answers');
         
         // keep track of user's answers
         var userAnswer = '';
         characterScore = 0;
         // for each question...
-        for(var i=0; i<20; i++){
+        for(var i=0; i<characterQuestions.length; i++){
 
             // find selected answer
 
