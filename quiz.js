@@ -19,7 +19,7 @@ var SurveyQuestions = [
     }
 ];
 
-var CharacterEasyQuizContainer = document.getElementById('cequiz');
+var CharacterQuizContainer = document.getElementById('cequiz');
 var BlankQuizContainer = document.getElementById('bquiz');
 var EsseyQuizContainer = document.getElementById('equiz');
 var SurveyQuizContainer = document.getElementById('squiz');
@@ -32,6 +32,9 @@ var finalScore = 0;
 var characterScore = 0;
 
 var characterQuestions = [];
+var blankQuestions = [];
+var esseyQuestions = [];
+var surveyQuestions = [];
 var result = '';
 
 function generatecharacterQuiz(url, quizContainer, resultsContainer, submitButton)
@@ -147,34 +150,23 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
             for(var i = 0; i < result.length; i++)
             {
                 var current = result[i];
-                characterQuestions.push(current);
+                blankQuestions.push(current);
                 answers = 
                     '<label>'
                         + '<input type="radio" name="question'+i+'" value="'+1+'">'
                         +'A: '
-                        +current.a
+                        +current.A
                     + '</label>'
                     + '<label>'
                         + '<input type="radio" name="question'+i+'" value="'+2+'">'
                         +'B: '
-                        +current.b
+                        +current.B
                     + '</label>'
-                    + '<label>'   
-                        + '<input type="radio" name="question'+i+'" value="'+3+'">'
-                        +'C: '
-                        +current.c
-                    + '</label>'
-                    + '<label>'
-                        + '<input type="radio" name="question'+i+'" value="'+4+'">'
-                        +'D: '
-                        +current.d
-                    + '</label>'
-                    
                 ;
               
             // add this question and its answers to the output
                 output.push(
-                '<div class="question">' +(i+1)+'. '+current.char + '</div>'
+                '<div class="question">' +(i+1)+'. '+current.quest+ '</div>'
                 + '<div class="answers">' + answers + '</div>'
                 );
             }
@@ -187,14 +179,14 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
         
 
         // gather answer containers from our quiz
-        console.log(characterQuestions);
+        console.log(blankQuestions);
         var answerContainers = quizContainer.querySelectorAll('.answers');
         
         // keep track of user's answers
         var userAnswer = '';
         characterScore = 0;
         // for each question...
-        for(var i=0; i<characterQuestions.length; i++){
+        for(var i=0; i<blankQuestions.length; i++){
 
             // find selected answer
 
@@ -208,8 +200,7 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
 
             if(userAnswer == 1)characterScore = characterScore+characterQuestions[i].Score1;
             if(userAnswer == 2)characterScore = characterScore+characterQuestions[i].Score2;
-            if(userAnswer == 3)characterScore = characterScore+characterQuestions[i].Score3;
-            if(userAnswer == 4)characterScore = characterScore+characterQuestions[i].Score4;
+           
 
         }
         finalScore = finalScore + characterScore;
@@ -218,7 +209,7 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
     }
 
     // show questions right away
-    loadcharacterQuestions(quizContainer);
+    loadBlankQuestions(quizContainer);
     
     // on submit, show results
     submitButton.onclick = function(){
@@ -233,4 +224,5 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
 
 
 
-generatecharacterQuiz("https://youxiriji.github.io/char_easy.json", CharacterEasyQuizContainer, resultsContainer, submitButton);
+generatecharacterQuiz("https://youxiriji.github.io/char_easy.json", CharacterQuizContainer, resultsContainer, submitButton);
+generateBlankQuiz("https://youxiriji.github.io/blank_easy.json", BlankQuizContainer, resultsContainer, submitButton)
