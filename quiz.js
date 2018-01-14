@@ -30,6 +30,9 @@ var submitButton = document.getElementById('submit');
 
 var finalScore = 0;
 var characterScore = 0;
+var blankScore = 0;
+var esseyScore = 0;
+var surveyScore = 0;
 
 var characterQuestions = [];
 var blankQuestions = [];
@@ -124,13 +127,6 @@ function generatecharacterQuiz(url, quizContainer, resultsContainer, submitButto
     // show questions right away
     loadcharacterQuestions(quizContainer);
     
-    // on submit, show results
-    submitButton.onclick = function(){
-        calculatecharacterScore(quizContainer, resultsContainer);
-        result = '';
-        result += '<p>'+'认知题得分：' + characterScore+'</p>';
-        resultsContainer.innerHTML = result;
-    }
 
 }
 
@@ -153,12 +149,12 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
                 blankQuestions.push(current);
                 answers = 
                     '<label>'
-                        + '<input type="radio" name="question'+i+'" value="'+1+'">'
+                        + '<input type="radio" name="blankquestion'+i+'" value="'+1+'">'
                         +'A: '
                         +current.A
                     + '</label>'
                     + '<label>'
-                        + '<input type="radio" name="question'+i+'" value="'+2+'">'
+                        + '<input type="radio" name="blankquestion'+i+'" value="'+2+'">'
                         +'B: '
                         +current.B
                     + '</label>'
@@ -175,18 +171,19 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
         });
        
     }
-    function calculatecharacterScore(quizContainer, resultsContainer){
+    function calculateScore(resultsContainer){
         
 
         // gather answer containers from our quiz
-        console.log(blankQuestions);
-        var answerContainers = quizContainer.querySelectorAll('.answers');
         
         // keep track of user's answers
         var userAnswer = '';
+        blankScore = 0;
         characterScore = 0;
         // for each question...
-        for(var i=0; i<blankQuestions.length; i++){
+        //character
+        var answerContainers = CharacterQuizContainer.querySelectorAll('.answers');
+        for(var i=0; i<characterQuestions.length; i++){
 
             // find selected answer
 
@@ -200,10 +197,31 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
 
             if(userAnswer == 1)characterScore = characterScore+characterQuestions[i].Score1;
             if(userAnswer == 2)characterScore = characterScore+characterQuestions[i].Score2;
+            if(userAnswer == 3)characterScore = characterScore+characterQuestions[i].Score3;
+            if(userAnswer == 4)characterScore = characterScore+characterQuestions[i].Score4;
+
+        }
+
+        var answerContainers = BlankQuizContainer.querySelectorAll('.answers');
+        for(var i=0; i<blankQuestions.length; i++){
+
+            // find selected answer
+
+            userAnswer = (answerContainers[i].querySelector('input[name=blankquestion'+i+']:checked')||{}).value;
+             console.log(userAnswer);
+            //console.log(userAnswer);
+            // if answer is correct
+            //if(userAnswer == 1)characterScore = characterScore -2;
+            //if(userAnswer == 2)characterScore = characterScore;
+            //if(userAnswer == 3)characterScore = characterScore+1;
+            //if(userAnswer == 4)characterScore = characterScore+2;
+
+            if(userAnswer == 1)blankScore = blankScore+blankQuestions[i].Score1;
+            if(userAnswer == 2)blankScore = blankScore+blankQuestions[i].Score2;
            
 
         }
-        finalScore = finalScore + characterScore;
+        finalScore = characterScore + blankScore ;
         // show number of correct answers out of total
         
     }
@@ -213,9 +231,13 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
     
     // on submit, show results
     submitButton.onclick = function(){
-        calculatecharacterScore(quizContainer, resultsContainer);
+        calculateScore(resultsContainer);
         result = '';
         result += '<p>'+'认知题得分：' + characterScore+'</p>';
+        result += '<p>'+'填空题得分：' + blankScore+'</p>';
+        result += '<p>'+'问答题得分：' + blankScore+'</p>';
+        result += '<p>'+'问卷题得分：' + blankScore+'</p>';
+        result += '<p>'+'总分：' + finalScore+'</p>';
         resultsContainer.innerHTML = result;
     }
 
@@ -225,4 +247,6 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
 
 
 generatecharacterQuiz("https://youxiriji.github.io/char_easy.json", CharacterQuizContainer, resultsContainer, submitButton);
-generateBlankQuiz("https://youxiriji.github.io/blank_easy.json", BlankQuizContainer, resultsContainer, submitButton)
+generateBlankQuiz("https://youxiriji.github.io/blank_easy.json", BlankQuizContainer, resultsContainer, submitButton);
+generateEsseyQuiz("https://youxiriji.github.io/essey_easy.json", BlankQuizContainer, resultsContainer, submitButton);
+generateSurveyQuiz("https://youxiriji.github.io/survey_easy.json", BlankQuizContainer, resultsContainer, submitButton);
