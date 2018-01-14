@@ -1,21 +1,24 @@
-var SurveyQuestions = [
+var SpecialQuestions = [
     {
-        question: "What is 10/2?",
+        question: "拥有以下成就则获得相应加分：",
         answers: {
-            a: '3',
-            b: '5',
-            c: '115'
+            a: '省赛区及以上等级的电子竞技比赛前三 +100',
+            b: '打破过社区承认的速通记录 +100',
+            c: '制作过一款游戏并上架主要平台 +100',
+            d: '为某款游戏制作过内容扩充型的MOD +50',
+            e: '创建和维护过某款游戏的维基/资料站 +50',
+            f: '在某款游戏中投入时间超过2000个小时 +50',
+            g: '从事与传统游戏相关的工作（开发，媒体，主播等） + 20',
+            h: '为某款游戏写过详细攻略 +20',
+            i: '为某款游戏进行过二次创作（各类绘画、同人等） +10',
+            j: '购买过某游戏的豪华限定版 +5'
+
         },
-        correctAnswer: 'b'
     },
+
     {
-        question: "What is 30/3?",
-        answers: {
-            a: '3',
-            b: '5',
-            c: '10'
-        },
-        correctAnswer: 'c'
+        question: "除Galgame外获得全成就（白金奖杯）等游戏的数量为：（每个+2）",
+       
     }
 ];
 
@@ -23,6 +26,7 @@ var CharacterQuizContainer = document.getElementById('cequiz');
 var BlankQuizContainer = document.getElementById('bquiz');
 var EsseyQuizContainer = document.getElementById('equiz');
 var SurveyQuizContainer = document.getElementById('squiz');
+var SpecialQuizContainer = document.getElementById('specialquiz');
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
 
@@ -138,6 +142,70 @@ function generateEsseyQuiz(url, quizContainer, resultsContainer, submitButton)
 }
 
 
+function generateSurveyQuiz(url, quizContainer, resultsContainer, submitButton)
+{
+    function loadSurveyQuestions(quizContainer){
+
+        var output = [];
+        var answers;
+
+        $.getJSON(url,function(result){
+            
+            for(var i = 0; i < result.length; i++)
+            {
+                var current = result[i];
+                surveyQuestions.push(current);
+                answers = 
+                    '<label>'
+                        + '<input type="radio" name="surveyquestion'+i+'" value="'+1+'">'
+                        +'A: '
+                        +current.A
+                        +'<br>'
+                    + '</label>'
+                    + '<label>'
+                        + '<input type="radio" name="surveyquestion'+i+'" value="'+2+'">'
+                        +'B: '
+                        +current.B
+                        +'<br>'
+                    + '</label>'
+                    + '<label>'
+                        + '<input type="radio" name="surveyquestion'+i+'" value="'+3+'">'
+                        +'C: '
+                        +current.C
+                        +'<br>'
+                    + '</label>'
+                    + '<label>'
+                        + '<input type="radio" name="surveyquestion'+i+'" value="'+4+'">'
+                        +'D: '
+                        +current.D
+                        +'<br>'
+                    + '</label>'
+                    + '<label>'
+                        + '<input type="radio" name="surveyquestion'+i+'" value="'+5+'">'
+                        +'E: '
+                        +current.E
+                        +'<br>'
+                    + '</label>'
+                    + '<label>'
+                        + '<input type="radio" name="surveyquestion'+i+'" value="'+6+'">'
+                        +'F: '
+                        +current.F
+                    + '</label>'
+                ;
+              
+            // add this question and its answers to the output
+                output.push(
+                '<div class="question">' +(i+1)+'. '+current.quest+ '</div>'
+                + '<div class="answers">' + answers + '</div>'
+                );
+            }
+            //console.log(output);
+            quizContainer.innerHTML = output.join('');
+        });
+       
+    }
+    loadSurveyQuestions(quizContainer);
+}
 
 function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
 {
@@ -177,6 +245,46 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
             quizContainer.innerHTML = output.join('');
         });
        
+    }
+    function loadSpecialQuestions()
+    {
+        var output = [];
+        var answers = '';
+        console.log(SpecialQuestions[0].answers);
+
+        var ct = 1;
+        for(set in SpecialQuestions[0].answers)
+        {
+             answers += 
+                    '<label>'
+                        + '<input type="checkbox" id="specialquestion'+ct+'" value="'+ct+'">'
+                        +SpecialQuestions[0].answers[set]
+                        +'<br>'
+                    + '</label>'
+                ;
+              
+            // add this question and its answers to the output
+                
+            ct++;
+            
+        }
+        output.push(
+                '<div class="question">' +1+'. '+SpecialQuestions[0].question+ '</div>'
+                + '<div class="answers">' + answers + '</div>'
+                );
+        
+        output.push(
+             '<div class="question">' +2+'. '+SpecialQuestions[1].question+ '</div>'
+                );
+
+        output.push(
+                '<label>'
+                + '<input type="textarea" id="specialtext'+'" value="'+0+'">'
+                +'<br>'+'<br>'
+                + '</label>'
+            )
+
+        SpecialQuizContainer.innerHTML = output.join('');
     }
     function calculateScore(resultsContainer){
         
@@ -266,6 +374,23 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
 
         }
 
+
+        if(document.getElementById('specialquestion1').checked)specialScore = specialScore+100;
+        if(document.getElementById('specialquestion2').checked)specialScore = specialScore+100;
+        if(document.getElementById('specialquestion3').checked)specialScore = specialScore+100;
+        if(document.getElementById('specialquestion4').checked)specialScore = specialScore+50;
+        if(document.getElementById('specialquestion5').checked)specialScore = specialScore+50;
+        if(document.getElementById('specialquestion6').checked)specialScore = specialScore+50;
+        if(document.getElementById('specialquestion7').checked)specialScore = specialScore+20;
+        if(document.getElementById('specialquestion8').checked)specialScore = specialScore+20;
+        if(document.getElementById('specialquestion9').checked)specialScore = specialScore+10;
+        if(document.getElementById('specialquestion10').checked)specialScore = specialScore+5;
+        specialScore  = specialScore + 2 * document.getElementById('specialtext').value;
+        //var answerContainers = SpecialQuizContainer.querySelectorAll('.answers');
+        //userAnswer = (answerContainers[i].querySelector('input[name=specialquestion'+1+']:checked')||{}).value;
+        
+           
+
         finalScore = characterScore + blankScore + esseyScore + surveyScore + specialScore;
         // show number of correct answers out of total
         
@@ -273,7 +398,7 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
 
     // show questions right away
     loadBlankQuestions(quizContainer);
-    
+    loadSpecialQuestions();
     // on submit, show results
     submitButton.onclick = function(){
         calculateScore(resultsContainer);
