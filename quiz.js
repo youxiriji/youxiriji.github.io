@@ -21,7 +21,7 @@ var SpecialQuestions = [
        
     }
 ];
-
+document.title = "游戏玩家核心度自测"
 var CharacterQuizContainer = document.getElementById('cequiz');
 var BlankQuizContainer = document.getElementById('bquiz');
 var EsseyQuizContainer = document.getElementById('equiz');
