@@ -171,7 +171,7 @@ function generateMediaQuiz(url, quizContainer, resultsContainer, submitButton)
               
             // add this question and its answers to the output
                 output.push(
-                '<div class="question">' +(i+1 + esseyQuestions.length)+'. '+current.quest+ '</div>'
+                '<div class="question">' +(i+21)+'. '+current.quest+ '</div>'
                 +'<br>'
                 +'<img src=' + current.link+' width=600>'
                 + '<div class="answers">' + answers + '</div>'
