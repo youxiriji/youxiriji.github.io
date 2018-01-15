@@ -173,7 +173,7 @@ function generateMediaQuiz(url, quizContainer, resultsContainer, submitButton)
                 output.push(
                 '<div class="question">' +(i+21)+'. '+current.quest+ '</div>'
                 +'<br>'
-                +'<img src=' + current.link+' width=600>'
+                +'<img src=' + current.link+' width=450>'
                 + '<div class="answers">' + answers + '</div>'
                 );
             }
