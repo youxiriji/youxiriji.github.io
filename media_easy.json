@@ -1,0 +1,92 @@
+[
+  {
+    "quest": "指出格拉摩根的位置。",
+    "type": "img",
+    "link": "http://ww1.sinaimg.cn/large/9e918900gy1fnhe7hmf66j20z30ua43m.jpg",
+    "A": "不知道（+0）",
+    "Score1": 0,
+    "B": "知道（+5）",
+    "Score2": 5
+  },
+  {
+    "quest": "如何斩杀对手？",
+    "type": "img",
+    "link": "http://ww1.sinaimg.cn/large/9e918900gy1fnhe7irqtyj20gb0n2x5h.jpg",
+    "A": "不知道（+0）",
+    "Score1": 0,
+    "B": "知道（+5）",
+    "Score2": 5
+  },
+  {
+    "quest": "此时你作为右边的选手，可能的击杀方式是？",
+    "type": "img",
+    "link": "http://ww1.sinaimg.cn/large/9e918900gy1fnhe7jltzjj216g0mzqv6.jpg",
+    "A": "不知道（+0）",
+    "Score1": 0,
+    "B": "知道（+5）",
+    "Score2": 5
+  },
+  {
+    "quest": "重合2张海图的方式是？",
+    "type": "img",
+    "link": "http://ww1.sinaimg.cn/large/9e918900gy1fnhe7i59k1j20mx0tz4qp.jpg",
+    "A": "不知道（+0）",
+    "Score1": 0,
+    "B": "知道（+5）",
+    "Score2": 5
+  },
+  {
+    "quest": "说出地点的名称。",
+    "type": "img",
+    "link": "http://ww1.sinaimg.cn/large/9e918900gy1fnhe7hv6rhj20ty0ewnj4.jpg",
+    "A": "不知道（+0）",
+    "Score1": 0,
+    "B": "知道（+5）",
+    "Score2": 5
+  },
+  {
+    "quest": "圈出进入逆城的房。",
+    "type": "img",
+    "link": "http://ww1.sinaimg.cn/large/9e918900gy1fnhe7hicv9j20gn0dbaay.jpg",
+    "A": "不知道（+0）",
+    "Score1": 0,
+    "B": "知道（+5）",
+    "Score2": 5
+  },
+  {
+    "quest": "上方的建筑在下方地图的哪个格子中？",
+    "type": "img",
+    "link": "http://ww1.sinaimg.cn/large/9e918900gy1fnhe7jlixij20qi14bnpe.jpg",
+    "A": "不知道（+0）",
+    "Score1": 0,
+    "B": "知道（+5）",
+    "Score2": 5
+  },
+  {
+    "quest": "此时应进行的操作是？",
+    "type": "img",
+    "link": "http://ww1.sinaimg.cn/large/9e918900gy1fnhe7hhac7j20ao074wer.jpg",
+    "A": "不知道（+0）",
+    "Score1": 0,
+    "B": "知道（+5）",
+    "Score2": 5
+  },
+  {
+    "quest": "这三位都是谁？",
+    "type": "img",
+    "link": "http://ww1.sinaimg.cn/large/9e918900gy1fnhe7hpuxjj20dc0b4tgx.jpg",
+    "A": "不知道（+0）",
+    "Score1": 0,
+    "B": "知道（+5）",
+    "Score2": 5
+  },
+  {
+    "quest": "这是哪款游戏中的哪座城市？",
+    "type": "img",
+    "link": "http://ww1.sinaimg.cn/large/9e918900gy1fnhe7kr4dtj21hc0u04qs.jpg",
+    "A": "不知道（+0）",
+    "Score1": 0,
+    "B": "知道（+5）",
+    "Score2": 5
+  }
+]
