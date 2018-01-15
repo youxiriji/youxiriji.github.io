@@ -142,47 +142,6 @@ function generateEsseyQuiz(url, quizContainer, resultsContainer, submitButton)
     loadEsseyQuestions(quizContainer);
 }
 
-function generateMediaQuiz(url, quizContainer, resultsContainer, submitButton)
-{
-    function loadMediaQuestions(quizContainer){
-
-        var output = [];
-        var answers;
-
-        $.getJSON(url,function(result){
-            
-            for(var i = 0; i < result.length; i++)
-            {
-                var current = result[i];
-                esseyQuestions.push(current);
-                answers = 
-                    '<label>'
-                        + '<input type="radio" name="esseyquestion'+i+'" value="'+1+'">'
-                        +'A: '
-                        +current.A
-                    + '</label>'
-                    + '<label>'
-                        + '<input type="radio" name="esseyquestion'+i+'" value="'+2+'">'
-                        +'B: '
-                        +current.B
-                    + '</label>'
-                ;
-              
-            // add this question and its answers to the output
-                output.push(
-                '<div class="question">' +(i+1)+'. '+current.quest+ '</div>'
-                +'<br>'
-                +'<img src=' + current.link+'>'
-                + '<div class="answers">' + answers + '</div>'
-                );
-            }
-            //console.log(output);
-            quizContainer.innerHTML = output.join('');
-        });
-       
-    }
-    loadMediaQuestions(quizContainer);
-}
 function generateSurveyQuiz(url, quizContainer, resultsContainer, submitButton)
 {
     function loadSurveyQuestions(quizContainer){
