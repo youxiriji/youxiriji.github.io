@@ -47,6 +47,18 @@ var surveyQuestions = [];
 var mediaQuestions = [];
 var result = '';
 
+
+function hide (elements) {
+    elements.style.display = 'none';
+}
+
+function show (elements) {
+    elements.style.display = 'block';
+}
+hide(document.getElementById('levels'));
+
+
+
 function generatecharacterQuiz(url, quizContainer, resultsContainer, submitButton)
 {
     finalScore = 0;
@@ -292,7 +304,7 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
     {
         var output = [];
         var answers = '';
-        console.log(SpecialQuestions[0].answers);
+        //console.log(SpecialQuestions[0].answers);
 
         var ct = 1;
         for(set in SpecialQuestions[0].answers)
@@ -369,7 +381,7 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
             // find selected answer
 
             userAnswer = (answerContainers[i].querySelector('input[name=blankquestion'+i+']:checked')||{}).value;
-             console.log(userAnswer);
+            // console.log(userAnswer);
             //console.log(userAnswer);
             // if answer is correct
             //if(userAnswer == 1)characterScore = characterScore -2;
@@ -389,7 +401,7 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
             // find selected answer
 
             userAnswer = (answerContainers[i].querySelector('input[name=esseyquestion'+i+']:checked')||{}).value;
-             console.log(userAnswer);
+             //console.log(userAnswer);
              
 
             if(userAnswer == 1)esseyScore = esseyScore+esseyQuestions[i].Score1;
@@ -403,7 +415,7 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
             // find selected answer
 
             userAnswer = (answerContainers[i].querySelector('input[name=mediaquestion'+i+']:checked')||{}).value;
-             console.log(userAnswer);
+            // console.log(userAnswer);
              
             //media questions will be added to essey score.
             if(userAnswer == 1)esseyScore = esseyScore+mediaQuestions[i].Score1;
@@ -459,13 +471,15 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
     submitButton.onclick = function(){
         calculateScore(resultsContainer);
         result = '';
-        result += '<p>'+'认知题得分：' + characterScore+'</p>';
-        result += '<p>'+'填空题得分：' + blankScore+'</p>';
-        result += '<p>'+'问答题得分：' + esseyScore+'</p>';
-        result += '<p>'+'问卷题得分：' + surveyScore+'</p>';
-        result += '<p>'+'特别加分：' + specialScore+'</p>';
-        result += '<p>'+'总分：' + finalScore+'</p>';
+        result += '<br>'+'认知题得分：' + characterScore;
+        result += '<br>'+'填空题得分：' + blankScore;
+        result += '<br>'+'问答题得分：' + esseyScore;
+        result += '<br>'+'问卷题得分：' + surveyScore;
+        result += '<br>'+'特别加分：' + specialScore+'<br>';
+        result += '<br>'+'<strong>总分</strong>：' + finalScore+'<br><br><br>';
         resultsContainer.innerHTML = result;
+        show(document.getElementById('levels'));
+        document.getElementById("submit").scrollIntoView();
     }
 
 }
