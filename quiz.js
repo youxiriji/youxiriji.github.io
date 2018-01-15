@@ -44,6 +44,7 @@ var characterQuestions = [];
 var blankQuestions = [];
 var esseyQuestions = [];
 var surveyQuestions = [];
+var mediaQuestions = [];
 var result = '';
 
 function generatecharacterQuiz(url, quizContainer, resultsContainer, submitButton)
@@ -142,6 +143,47 @@ function generateEsseyQuiz(url, quizContainer, resultsContainer, submitButton)
     loadEsseyQuestions(quizContainer);
 }
 
+function generateMediaQuiz(url, quizContainer, resultsContainer, submitButton)
+{
+    function loadMediaQuestions(quizContainer){
+
+        var output = [];
+        var answers;
+
+        $.getJSON(url,function(result){
+            
+            for(var i = 0; i < result.length; i++)
+            {
+                var current = result[i];
+                mediaQuestions.push(current);
+                answers = 
+                    '<label>'
+                        + '<input type="radio" name="mediaquestion'+i+'" value="'+1+'">'
+                        +'A: '
+                        +current.A
+                    + '</label>'
+                    + '<label>'
+                        + '<input type="radio" name="mediaquestion'+i+'" value="'+2+'">'
+                        +'B: '
+                        +current.B
+                    + '</label>'
+                ;
+              
+            // add this question and its answers to the output
+                output.push(
+                '<div class="question">' +(i+1 + esseyQuestions.length)+'. '+current.quest+ '</div>'
+                +'<br>'
+                +'<img src=' + current.link+' width=600>'
+                + '<div class="answers">' + answers + '</div>'
+                );
+            }
+            //console.log(output);
+            quizContainer.innerHTML = output.join('');
+        });
+       
+    }
+    loadMediaQuestions(quizContainer);
+}
 function generateSurveyQuiz(url, quizContainer, resultsContainer, submitButton)
 {
     function loadSurveyQuestions(quizContainer){
@@ -352,6 +394,20 @@ function generateBlankQuiz(url, quizContainer, resultsContainer, submitButton)
 
             if(userAnswer == 1)esseyScore = esseyScore+esseyQuestions[i].Score1;
             if(userAnswer == 2)esseyScore = esseyScore+esseyQuestions[i].Score2;
+           
+
+        }
+        var answerContainers = MediaQuizContainer.querySelectorAll('.answers');
+        for(var i=0; i<mediaQuestions.length; i++){
+
+            // find selected answer
+
+            userAnswer = (answerContainers[i].querySelector('input[name=mediaquestion'+i+']:checked')||{}).value;
+             console.log(userAnswer);
+             
+            //media questions will be added to essey score.
+            if(userAnswer == 1)esseyScore = esseyScore+mediaQuestions[i].Score1;
+            if(userAnswer == 2)esseyScore = esseyScore+mediaQuestions[i].Score2;
            
 
         }
